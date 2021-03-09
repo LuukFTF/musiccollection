@@ -1,15 +1,32 @@
 <?php
-//Require functions for actions
-require_once "includes/actions.php";
+require_once "model/model.php";
 
-//Based on the existence of the GET parameter, 1 of the 2 functions will be called
-if (!isset($_GET['id'])) {
-    $data = getSongs();
-} else {
-    $data = getSongDetails($_GET['id']);
+!isset($_GET['type']) ? $_GET['type'] = "" : "";
+
+switch ($_GET['type']) {
+    case 'song':
+        if (!isset($_GET['id'])) {
+            $data = getSongs();
+        } else {
+            $data = getSongDetails($_GET['id']);
+        }
+        break;
+    case 'playlist':
+        if (!isset($_GET['id'])) {
+            $data = getPlaylists();
+        } else {
+            $data = getPlaylistDetails($_GET['id']);
+        }
+        break;
+    default:
+        if (!isset($_GET['id'])) {
+            $data = getSongs();
+        } else {
+            $data = getSongDetails($_GET['id']);
+        }
 }
 
-//Set the header & output JSON so the client will know what to expect.
+
 header("Content-Type: application/json");
 echo json_encode($data);
 exit;
