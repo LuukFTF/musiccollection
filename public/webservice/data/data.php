@@ -208,6 +208,12 @@ $playlists = [
         "author" => "Jeffrey",
         "image" => "",
     ],
+    [
+        "id" => 5,
+        "title" => "Repetitie Huiswerk 20-5",
+        "author" => "Jeffrey",
+        "image" => "",
+    ],
 ];
 
 
@@ -237,6 +243,13 @@ $playlistDetails = [
     4 => [
         "playlists_songs" => [1, 7],
         "datecreated" => "2021-03-09",
+        "tags" => ['homework', ''],
+        "tags_nl" => ['', ''],
+        "createdby" => "jeffrey"
+    ],
+    5 => [
+        "playlists_songs" => [],
+        "datecreated" => "2021-03-24",
         "tags" => ['homework', ''],
         "tags_nl" => ['', ''],
         "createdby" => "jeffrey"

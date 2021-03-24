@@ -50,6 +50,8 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+
+    scrollbar-width: none;
 }
 
 body {
@@ -528,7 +530,59 @@ table .btn:active {
     }
 }
 
+/* # Music Collection */
 
+/* ## Pinned */
+
+.pinned-block {
+    margin: 30px;
+    padding: 10px;
+    flex-grow: 50%;
+
+    flex-wrap: wrap;
+
+    background: var(--surface-color1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.pinned-item {
+    margin: 10px;
+    
+    width: 30%;
+    height: 100px;
+
+    flex-grow: 2;
+    align-content: stretch;
+
+    padding: 15px;
+    background: var(--surface-color2);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius: 5px;
+}
+
+/* ## Trays */
+
+.tray {
+    margin: 30px;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+}
+
+.tray-item {
+    margin: 0 10px;
+
+    height: 200px;
+    width: 150px;
+    
+    flex-shrink: 0;
+
+    padding: 15px;
+    background: var(--surface-color2);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius: 5px;
+}
 
 /* # Template */
 

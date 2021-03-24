@@ -1,3 +1,13 @@
+<?php
+require_once "../webservice/model/model.php";
+
+$songs[] = getSongs();
+
+$playlists[] = getPlaylists();
+
+?>
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,9 +23,68 @@
 
     <div class="webcontainer">
         <section class="homepage">
-            <div class="pinned">
+            <div class="pinned-block container flex flexrow">
+                <div class="pinned-item flexitem">
+                    <div class="cover"></div>
+                    <div class="title"><?= $playlists[4]["title"] ?></div>
+                    <div class="subtitle"><?= $playlists[4]["author"] ?></div>
+                </div>
+                <div class="pinned-item flexitem">
+                    <div class="cover"></div>
+                    <div class="title"><?= $playlists[2]["title"] ?></div>
+                    <div class="subtitle"><?= $playlists[2]["author"] ?></div>
+                </div>
+                <div class="pinned-item flexitem">
+                    <div class="cover"></div>
+                    <div class="title"><?= $playlists[1]["title"] ?></div>
+                    <div class="subtitle"><?= $playlists[1]["author"] ?></div>
+                </div>
+                <div class="pinned-item flexitem">
+                    <div class="cover"></div>
+                    <div class="title"><?= $playlists[4]["title"] ?></div>
+                    <div class="subtitle"><?= $playlists[4]["author"] ?></div>
+                </div>
             </div>
-            
+            <div class="tray songs-tray container flex flexrow">
+            <?php foreach ($songs as $id => $song) {
+                ;?>
+                <div class="tray-item flexitem">
+                    <div class="cover"></div>
+                    <div class="title"><?= $song["title"] ?></div>
+                    <div class="subtitle"><?= $song["artist"] ?></div>
+                </div>
+            <?php $id++; } ?>
+            </div>
+            <div class="tray playlists-tray  container flex flexrow">
+            <?php foreach ($playlists as $id => $playlist) {
+                ;?>
+                <div class="tray-item flexitem">
+                    <div class="cover"></div>
+                    <div class="title"><?= $playlist["title"] ?></div>
+                    <div class="subtitle"><?= $playlist["author"] ?></div>
+                </div>
+            <?php $id++; } ?>
+            </div>
+            <div class="tray recentplaylist-tray  container flex flexrow">
+            <?php foreach ($songs as $id => $song) {
+                ;?>
+                <div class="tray-item flexitem">
+                    <div class="cover"></div>
+                    <div class="title"><?= $song["title"] ?></div>
+                    <div class="subtitle"><?= $song["artist"] ?></div>
+                </div>
+            <?php $id++; } ?>
+            </div>
+            <div class="tray recentplaylist-tray  container flex flexrow">
+            <?php foreach ($playlists as $id => $playlist) {
+                ;?>
+                <div class="tray-item flexitem">
+                    <div class="cover"></div>
+                    <div class="title"><?= $playlist["title"] ?></div>
+                    <div class="subtitle"><?= $playlist["author"] ?></div>
+                </div>
+            <?php $id++; } ?>
+            </div>
         </section>
     </div>
 
