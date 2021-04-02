@@ -91,12 +91,12 @@ $playlists[] = getPlaylists();
 
     <floatbar id="floatbar" class="floatbar-container">
         <div class="floatbar container flex flexrow"> 
-            <div class="bigicon btn btn-fav flexitem"></div>
+            <a onclick="floatbar.updateFavorite()" class="bigicon btn btn-fav flexitem" id="starred"></a>
             <div class="floatmid flexitem">
-                <div class="title">2013</div>
-                <div class="subtitle">Power Ballet, Choir, Love, Ro..</div>
+                <div class="title" id="title">2013</div>
+                <div class="subtitle" id="subtitle">Power Ballet, Choir, Love, Ro..</div>
             </div>
-            <div class="infotext flexitem">4:45</div>
+            <div class="infotext flexitem" id="infotext">4:45</div>
         </div>
     </floatbar>
 
