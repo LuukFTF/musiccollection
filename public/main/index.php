@@ -89,24 +89,25 @@ $playlists[] = getPlaylists();
 
 </div>
 
-    <section class="floatbar-container">
+    <floatbar id="floatbar" class="floatbar-container">
         <div class="floatbar container flex flexrow"> 
             <div class="bigicon btn btn-fav flexitem"></div>
             <div class="floatmid flexitem">
                 <div class="title">2013</div>
                 <div class="subtitle">Power Ballet, Choir, Love, Ro..</div>
             </div>
-            <div class="infotext flexitem">4:45<div>
+            <div class="infotext flexitem">4:45</div>
         </div>
-    </section>
+    </floatbar>
 
     <section class="bottomnavbar-container">
         <nav class="bottomnavbar container flex nav">
             <a href="../main" class="btn nav-btn btn-home active"><br><div class="btn-text">Home</div></a>
-            <a href="../settings" class="btn nav-btn btn-settings"><br><div class="btn-text">Settings</div></a>
+            <a onclick="floatbar.toggleFloatbar()" class="btn nav-btn btn-settings"><br><div class="btn-text">Settings</div></a>
         </nav>
     </section>
 
 </body>
+<script src="..//js/main.js"></script> 
 </html>
 
