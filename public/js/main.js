@@ -7,7 +7,7 @@ class Floatbar{
 
         this.starred = "false"
         this.titleContent = "Lorem Ipsum"
-        this.subtitleContent = "Lorem Ipsum Dolor Sit Amet"
+        this.subtitleContent = "Lorem ipsum dolor sit amet"
         this.infotextContent = "13:37"
 
         this.starredDoc = document.getElementById("starred");
@@ -87,9 +87,7 @@ class Floatbar{
     }
 
 }
+
 let floatbar = new Floatbar()
 
 console.log('JS Loaded')
-
-
-// favorite toggle icon
