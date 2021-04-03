@@ -96,6 +96,10 @@ body {
     background: var(--surface-color1);
 }
 
+.hide {
+    display: none;
+}
+
 /* ## Content */
 
 h1 {
@@ -700,9 +704,7 @@ floatbar {
     }
 }
 
-.hide {
-    display: none;
-}
+
 
 /* # Template */
 

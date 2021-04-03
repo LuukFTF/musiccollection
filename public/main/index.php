@@ -24,7 +24,7 @@ $playlists[] = getPlaylists();
 <div class="webcontainer">
     <section class="homepage">
         <div class="pinned-block container flex flexrow">
-            <a class="pinned-item flexitem" href="#test">
+            <a class="pinned-item flexitem" onclick=floatbar.fillFloatbar(' <?= $playlists[4]["title"] ?> ')>
                 <div class="cover"></div>
                 <div class="title"><?= $playlists[4]["title"] ?></div>
                 <div class="subtitle"><?= $playlists[4]["author"] ?></div>
@@ -108,6 +108,6 @@ $playlists[] = getPlaylists();
     </section>
 
 </body>
-<script src="..//js/main.js"></script> 
+<script src="../js/main.js"></script> 
 </html>
 
