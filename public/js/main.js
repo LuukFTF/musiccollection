@@ -15,7 +15,7 @@ class Floatbar{
         this.subtitleDoc = document.getElementById("subtitle");
         this.infotextDoc = document.getElementById("infotext");
 
-        this.initFillFloatbar();
+        // this.initFillFloatbar();
     }
 
     toggleFloatbar(){
@@ -37,10 +37,11 @@ class Floatbar{
     }
 
     initFillFloatbar(){
-        this.fillFloatbar(this.starred, this.titleContent, this.subtitleContent, this.infotextContent)
+        this.fillFloatbar(this.titleContent, this.subtitleContent, this.infotextContent, this.starred)
     }
 
-    fillFloatbar(starred = false, titleContent, subtitleContent, infotextContent){
+    fillFloatbar(titleContent, subtitleContent, infotextContent, starred = false){
+        this.starred = starred;
         this.titleDoc.innerHTML = titleContent;
         this.subtitleDoc.innerHTML = subtitleContent;
         this.infotextDoc.innerHTML = infotextContent;
@@ -64,7 +65,7 @@ class Floatbar{
         this.getViewFav()
 
         console.log("backend update added to favorite")
-        // update backend
+        // update backend localstorage
     }
 
     removeFavorite() {
@@ -73,7 +74,7 @@ class Floatbar{
         this.getViewFav()
 
         console.log("backend update removed from favorite")
-        // update backend
+        // update backend localstorage
     }
 
     getViewFav() {

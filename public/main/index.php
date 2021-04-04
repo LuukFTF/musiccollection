@@ -5,6 +5,7 @@ $songs[] = getSongs();
 
 $playlists[] = getPlaylists();
 
+
 ?>
 
 
@@ -14,7 +15,6 @@ $playlists[] = getPlaylists();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,
     initial-schale=1.0">
-    <script type="text/javascript" src="js/main.js"></script>
     <script src="https://kit.fontawesome.com/0bc22cc72a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
     <title>Home | Music Collection</title>
@@ -109,5 +109,35 @@ $playlists[] = getPlaylists();
 
 </body>
 <script src="../js/main.js"></script> 
+<?php 
+
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+
+    if($_GET['type'] == 'song') {
+        $song = getSongDetails($id);
+    
+        $titleContent = $song["date"];
+        $subtitleContent = $song["tags"];
+        $infotextContent = $song["length"];
+    } else if($_GET['type'] == 'playlist') {
+        $playlist = getPlaylistDetails($id);
+    
+        $titleContent = $playlist["datecreated"];
+        $subtitleContent = $playlist["jeffrey"];
+        $infotextContent = $playlist["totallength"];
+    }
+
+    fillFloatbar($titleContent, $subtitleContent, $infotextContent);
+}
+
+
+function fillFloatbar($titleContent, $subtitleContent, $infotextContent) {
+    echo '<script type="text/javascript">',
+    'floatbar.fillFloatbar("'.$titleContent.'", "'.$subtitleContent.'", "'.$infotextContent.'");',
+    '</script>';
+}
+?>
+
 </html>
 
