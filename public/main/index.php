@@ -1,10 +1,10 @@
 <?php
 require_once "../webservice/model/model.php";
+require_once "../webservice/controllers/controller.php";
 
 $songs[] = getSongs();
 
 $playlists[] = getPlaylists();
-
 
 ?>
 
@@ -24,22 +24,22 @@ $playlists[] = getPlaylists();
 <div class="webcontainer">
     <section class="homepage">
         <div class="pinned-block container flex flexrow">
-            <a class="pinned-item flexitem" onclick=floatbar.fillFloatbar(' <?= $playlists[4]["title"] ?> ')>
+            <a class="pinned-item flexitem" href="?type=playlist&id=4">
                 <div class="cover"></div>
                 <div class="title"><?= $playlists[4]["title"] ?></div>
                 <div class="subtitle"><?= $playlists[4]["author"] ?></div>
             </a>
-            <a class="pinned-item flexitem" href="#test">
+            <a class="pinned-item flexitem" href="?type=playlist&id=2">
                 <div class="cover"></div>
                 <div class="title"><?= $playlists[2]["title"] ?></div>
                 <div class="subtitle"><?= $playlists[2]["author"] ?></div>
             </a>
-            <a class="pinned-item flexitem" href="#test">
+            <a class="pinned-item flexitem" href="?type=playlist&id=1">
                 <div class="cover"></div>
                 <div class="title"><?= $playlists[1]["title"] ?></div>
                 <div class="subtitle"><?= $playlists[1]["author"] ?></div>
             </a>
-            <a class="pinned-item flexitem" href="#test">
+            <a class="pinned-item flexitem" href="?type=playlist&id=4">
                 <div class="cover"></div>
                 <div class="title"><?= $playlists[4]["title"] ?></div>
                 <div class="subtitle"><?= $playlists[4]["author"] ?></div>
@@ -48,7 +48,7 @@ $playlists[] = getPlaylists();
         <div class="tray songs-tray container flex flexrow">
         <?php foreach ($songs as $id => $song) {
             ;?>
-            <a class="tray-item flexitem" href="#test">
+            <a class="tray-item flexitem" href="?type=song&id=<?=$id+1?>">
                 <div class="cover"></div>
                 <div class="title"><?= $song["title"] ?></div>
                 <div class="subtitle"><?= $song["artist"] ?></div>
@@ -58,7 +58,7 @@ $playlists[] = getPlaylists();
         <div class="tray playlists-tray  container flex flexrow">
         <?php foreach ($playlists as $id => $playlist) {
             ;?>
-            <a class="tray-item flexitem" href="#test">
+            <a class="tray-item flexitem" href="?type=playlist&id=<?=$id+1?>">
                 <div class="cover"></div>
                 <div class="title"><?= $playlist["title"] ?></div>
                 <div class="subtitle"><?= $playlist["author"] ?></div>
@@ -68,7 +68,7 @@ $playlists[] = getPlaylists();
         <div class="tray recentplaylist-tray  container flex flexrow">
         <?php foreach ($songs as $id => $song) {
             ;?>
-            <a class="tray-item flexitem" href="#test">
+            <a class="tray-item flexitem" href="?type=song&id=<?=$id+1?>">
                 <div class="cover"></div>
                 <div class="title"><?= $song["title"] ?></div>
                 <div class="subtitle"><?= $song["artist"] ?></div>
@@ -78,7 +78,7 @@ $playlists[] = getPlaylists();
         <div class="tray recentplaylist-tray  container flex flexrow">
         <?php foreach ($playlists as $id => $playlist) {
             ;?>
-            <a class="tray-item flexitem" href="#test">
+            <a class="tray-item flexitem" href="?type=playlist&id=<?=$id+1?>">
                 <div class="cover"></div>
                 <div class="title"><?= $playlist["title"] ?></div>
                 <div class="subtitle"><?= $playlist["author"] ?></div>
@@ -109,35 +109,6 @@ $playlists[] = getPlaylists();
 
 </body>
 <script src="../js/main.js"></script> 
-<?php 
-
-if(isset($_GET['id'])){
-    $id = $_GET['id'];
-
-    if($_GET['type'] == 'song') {
-        $song = getSongDetails($id);
-    
-        $titleContent = $song["date"];
-        $subtitleContent = $song["tags"];
-        $infotextContent = $song["length"];
-    } else if($_GET['type'] == 'playlist') {
-        $playlist = getPlaylistDetails($id);
-    
-        $titleContent = $playlist["datecreated"];
-        $subtitleContent = $playlist["jeffrey"];
-        $infotextContent = $playlist["totallength"];
-    }
-
-    fillFloatbar($titleContent, $subtitleContent, $infotextContent);
-}
-
-
-function fillFloatbar($titleContent, $subtitleContent, $infotextContent) {
-    echo '<script type="text/javascript">',
-    'floatbar.fillFloatbar("'.$titleContent.'", "'.$subtitleContent.'", "'.$infotextContent.'");',
-    '</script>';
-}
-?>
-
+<?php checkGET() ?>
 </html>
 
