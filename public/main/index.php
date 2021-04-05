@@ -3,18 +3,16 @@ require_once "../webservice/model/model.php";
 require_once "../webservice/controllers/controller.php";
 
 $songs[] = getSongs();
-
 $playlists[] = getPlaylists();
 
 ?>
-
 
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,
-    initial-schale=1.0">
+    initial-scale=1.0">
     <script src="https://kit.fontawesome.com/0bc22cc72a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/style.css">
     <title>Home | Music Collection</title>

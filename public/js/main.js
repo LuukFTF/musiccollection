@@ -4,7 +4,6 @@ class Floatbar{
         this.hidden = false;
 
         this.hideFloatbar();
-
         this.starred = "false"
         this.titleContent = "Lorem Ipsum"
         this.subtitleContent = "Lorem ipsum dolor sit amet"
